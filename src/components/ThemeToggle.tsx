@@ -29,8 +29,8 @@ export const ThemeToggle = () => {
         aria-label={`Tema: ${options.find((o) => o.value === current)?.label ?? "Sistema"}. Cambiar tema`}
         className="relative inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/80 bg-background text-foreground/80 transition-colors duration-200 hover:border-primary/40 hover:bg-primary/5 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-95 data-[state=open]:border-primary/40 data-[state=open]:text-primary"
       >
-        <Sun className={`h-[18px] w-[18px] transition-all duration-300 ${isDark ? "scale-0 -rotate-90 opacity-0" : "scale-100 rotate-0 opacity-100"}`} />
-        <Moon className={`absolute h-[18px] w-[18px] transition-all duration-300 ${isDark ? "scale-100 rotate-0 opacity-100" : "scale-0 rotate-90 opacity-0"}`} />
+        <Sun className={`h-[18px] w-[18px] transition-[transform,opacity] duration-300 ${isDark ? "scale-0 -rotate-90 opacity-0" : "scale-100 rotate-0 opacity-100"}`} />
+        <Moon className={`absolute h-[18px] w-[18px] transition-[transform,opacity] duration-300 ${isDark ? "scale-100 rotate-0 opacity-100" : "scale-0 rotate-90 opacity-0"}`} />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="min-w-[10rem]">
         {options.map(({ value, label, icon: Icon }) => (

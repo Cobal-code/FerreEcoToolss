@@ -6,16 +6,7 @@ import { FeaturedProducts } from "@/components/FeaturedProducts";
 import { products, categories } from "@/data/products";
 import { useMemo } from "react";
 import { getWebpSrc } from "@/lib/imageSrc";
-
-// Función para mezclar array (Fisher-Yates shuffle)
-const shuffleArray = <T,>(array: T[]): T[] => {
-  const shuffled = [...array];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
-};
+import { HeroWrench } from "@/components/HeroWrench";
 
 const categoryIcons: Record<string, LucideIcon> = {
   "Herramientas Manuales": Hammer,
@@ -36,31 +27,6 @@ const Home = () => {
       }),
     [],
   );
-
-  // Seleccionar 12 productos aleatorios para mostrar en el hero (rotación en cada carga)
-  const heroProducts = useMemo(() => {
-    const productsWithImages = products.filter(p => p.image);
-    return shuffleArray(productsWithImages).slice(0, 12);
-  }, []);
-
-  // Posiciones para formar silueta de taladro/herramienta
-  const thumbnailPositions = [
-    // Cuerpo principal (diagonal)
-    { row: 1, col: 1, delay: 0 },
-    { row: 1, col: 2, delay: 100 },
-    { row: 2, col: 2, delay: 200 },
-    { row: 2, col: 3, delay: 300 },
-    { row: 3, col: 3, delay: 400 },
-    { row: 3, col: 4, delay: 500 },
-    // Extensión lateral (broca/mango)
-    { row: 1, col: 3, delay: 150 },
-    { row: 2, col: 1, delay: 250 },
-    { row: 4, col: 4, delay: 550 },
-    // Detalles adicionales
-    { row: 4, col: 3, delay: 450 },
-    { row: 3, col: 2, delay: 350 },
-    { row: 4, col: 2, delay: 600 },
-  ];
 
   const features = [
     { icon: Truck, title: "Envío Rápido", text: "Despacho en 24-48 horas" },
@@ -152,56 +118,17 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Right Content - Product Thumbnails Composition */}
-            <div className="relative motion-safe:animate-in motion-safe:fade-in duration-1000 delay-200">
-              <div className="relative w-full max-w-[20rem] sm:max-w-md mx-auto aspect-square">
-                {/* Glow effect behind composition */}
-                <div className="absolute inset-6 bg-gradient-to-br from-primary/25 via-secondary/10 to-transparent rounded-full blur-3xl" />
-
-                {/* Grid of thumbnails */}
-                <div className="relative grid grid-cols-4 grid-rows-4 gap-2 sm:gap-2.5 p-2">
-                  {thumbnailPositions.map((pos, index) => {
-                    const product = heroProducts[index];
-                    if (!product) return null;
-
-                    return (
-                      <Link
-                        key={product.id}
-                        to={`/producto/${product.id}`}
-                        aria-label={product.name}
-                        className="group aspect-square rounded-xl sm:rounded-2xl overflow-hidden bg-white ring-1 ring-white/10 shadow-lg shadow-black/30 transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary motion-safe:animate-in motion-safe:fade-in motion-safe:zoom-in-95 fill-mode-both"
-                        style={{
-                          gridRow: pos.row,
-                          gridColumn: pos.col,
-                          animationDelay: `${pos.delay}ms`,
-                          animationDuration: '500ms',
-                        }}
-                      >
-                        <img
-                          src={getWebpSrc(product.image, 400)}
-                          srcSet={`${getWebpSrc(product.image, 400)} 400w, ${getWebpSrc(product.image, 800)} 800w`}
-                          sizes="(max-width: 768px) 25vw, 120px"
-                          alt={product.name}
-                          width={200}
-                          height={200}
-                          className="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-110"
-                          loading={index < 4 ? "eager" : "lazy"}
-                          decoding={index < 4 ? "sync" : "async"}
-                          {...{ fetchpriority: index === 0 ? "high" : index < 4 ? "auto" : "low" }}
-                        />
-                      </Link>
-                    );
-                  })}
-                </div>
-
-                {/* Floating badge */}
-                <div className="absolute bottom-3 left-3 sm:bottom-6 sm:left-2 bg-secondary text-secondary-foreground rounded-full px-4 py-2 shadow-xl shadow-black/30 ring-4 ring-ink z-20">
-                  <div className="flex items-center gap-2">
-                    <Zap className="h-4 w-4" />
-                    <span className="text-xs font-bold whitespace-nowrap">Hasta 30% OFF</span>
+            {/* Right Content - Llave mixta horizontal formada por productos reales */}
+            <div className="relative">
+              <HeroWrench>
+                {/* Insignia existente, integrada bajo el cuerpo de la llave */}
+                <div className="absolute bottom-0 left-1/2 z-30 -translate-x-1/2 rounded-full bg-secondary px-3 py-1.5 text-secondary-foreground shadow-xl shadow-black/30 ring-4 ring-ink xl:px-4 xl:py-2">
+                  <div className="flex items-center gap-1.5 xl:gap-2">
+                    <Zap className="h-3.5 w-3.5 xl:h-4 xl:w-4" aria-hidden="true" />
+                    <span className="whitespace-nowrap text-xs font-bold">Hasta 30% OFF</span>
                   </div>
                 </div>
-              </div>
+              </HeroWrench>
             </div>
           </div>
         </div>
@@ -222,7 +149,7 @@ const Home = () => {
                   <Icon className="h-5 w-5" />
                 </div>
                 <div className="min-w-0">
-                  <h3 className="font-display font-bold text-sm sm:text-base leading-tight">{title}</h3>
+                  <h2 className="font-display font-bold text-sm sm:text-base leading-tight">{title}</h2>
                   <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">{text}</p>
                 </div>
               </div>
