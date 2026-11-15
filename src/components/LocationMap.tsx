@@ -2,13 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MapPin, ExternalLink, Clock, Phone } from "lucide-react";
 
-const LAT = 4.1254775326449495;
-const LNG = -73.54500527328169;
-const BUSINESS_NAME = "Ferelectricos Castellanos Ferreecotools";
-const GOOGLE_MAPS_URL = `https://www.google.com/maps?q=${LAT},${LNG}`;
-const EMBED_URL = `https://maps.google.com/maps?q=${encodeURIComponent(
-  BUSINESS_NAME
-)}@${LAT},${LNG}&ll=${LAT},${LNG}&z=17&output=embed`;
+import { BUSINESS_ADDRESS, BUSINESS_NAME, EMBED_URL, GOOGLE_MAPS_URL } from "@/data/businessLocation";
 
 export const LocationMap = () => {
   return (
@@ -32,7 +26,7 @@ export const LocationMap = () => {
                   <div>
                     <h3 className="font-semibold text-sm mb-1">Dirección</h3>
                     <p className="text-sm text-muted-foreground">
-                      Calle 27B #60BE-18, Manzana 79 Casa 7, Barrio La Reliquia, Villavicencio
+                      {BUSINESS_ADDRESS}
                     </p>
                   </div>
                 </div>

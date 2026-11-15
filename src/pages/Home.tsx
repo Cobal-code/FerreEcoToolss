@@ -7,6 +7,7 @@ import { products, categories } from "@/data/products";
 import { useMemo } from "react";
 import { getWebpSrc } from "@/lib/imageSrc";
 import { HeroWrench } from "@/components/HeroWrench";
+import { HomeLocationMap } from "@/components/HomeLocationMap";
 
 const categoryIcons: Record<string, LucideIcon> = {
   "Herramientas Manuales": Hammer,
@@ -245,6 +246,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Ubicación */}
+      <HomeLocationMap />
     </div>
   );
 };

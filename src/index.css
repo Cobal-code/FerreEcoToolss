@@ -296,3 +296,9 @@ All colors MUST be HSL.
     transform: scale(0.55);
   }
 }
+
+/* ---------- Mapa de ubicación ---------- */
+/* El mapa incrustado de Google no tiene modo oscuro: se invierte conservando los tonos (calles legibles y marcador rojo) */
+.dark .map-embed {
+  filter: invert(0.92) hue-rotate(180deg) brightness(0.95) contrast(0.92) saturate(0.9);
+}
