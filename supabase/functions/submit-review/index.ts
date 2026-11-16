@@ -232,16 +232,24 @@ const handler = async (req: Request): Promise<Response> => {
     });
   }
 
-  // Rate limiting - 5 reviews per minute per IP
-  const rateLimit = await checkRateLimit(req, "submit_review", 5);
-  if (!rateLimit.allowed) {
-    console.warn("Rate limit exceeded for review submission");
-    return createRateLimitResponse(corsHeaders);
-  }
-
   try {
+    // Rate limiting - 5 reviews per minute per IP
+    const rateLimit = await checkRateLimit(req, "submit_review", 5);
+    if (!rateLimit.allowed) {
+      console.warn("Rate limit exceeded for review submission");
+      return createRateLimitResponse(corsHeaders);
+    }
+
     // Parse and validate input
-    const rawData = await req.json();
+    let rawData: unknown;
+    try {
+      rawData = await req.json();
+    } catch {
+      return new Response(
+        JSON.stringify({ success: false, error: "Datos de la reseña inválidos. Verifica la información." }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
     const validationResult = reviewSchema.safeParse(rawData);
 
     if (!validationResult.success) {
@@ -336,4 +344,15 @@ const handler = async (req: Request): Promise<Response> => {
   }
 };
 
-Deno.serve(handler);
+// Red de seguridad: cualquier error inesperado también devuelve cabeceras CORS
+Deno.serve(async (req: Request): Promise<Response> => {
+  try {
+    return await handler(req);
+  } catch (error) {
+    console.error("Unhandled error in submit-review:", error);
+    return new Response(
+      JSON.stringify({ success: false, error: "No se pudo enviar la reseña. Intenta de nuevo." }),
+      { status: 500, headers: { "Content-Type": "application/json", ...getCorsHeaders(req) } }
+    );
+  }
+});

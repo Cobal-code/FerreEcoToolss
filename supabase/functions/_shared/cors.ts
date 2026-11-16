@@ -7,6 +7,8 @@ const PRODUCTION_DOMAIN = 'https://ferreecotools.lovable.app';
 // Allowed exact origins
 const ALLOWED_ORIGINS = [
   PRODUCTION_DOMAIN,
+  'https://ferreecotools.com', // Dominio propio
+  'https://www.ferreecotools.com',
   'http://localhost:5173', // Local development
   'http://localhost:8080', // Alternative local dev port
   'http://localhost:3000', // Common dev port
@@ -46,6 +48,7 @@ export function getCorsHeaders(req: Request): Record<string, string> {
     'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
     'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
     'Access-Control-Max-Age': '86400',
+    'Vary': 'Origin',
   };
 }
 

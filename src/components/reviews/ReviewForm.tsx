@@ -139,7 +139,8 @@ export const ReviewForm = ({ productId, onSuccess }: ReviewFormProps) => {
   };
 
   // Save image URLs to database
-  const saveImageUrls = async (reviewId: string, imageUrls: string[]) => {
+  const saveImageUrls = async (reviewId: string, imageUrls: string[]): Promise<number> => {
+    let saved = 0;
     for (const imageUrl of imageUrls) {
       const { error } = await supabase
         .from('review_images')
@@ -147,11 +148,14 @@ export const ReviewForm = ({ productId, onSuccess }: ReviewFormProps) => {
           review_id: reviewId,
           image_url: imageUrl,
         });
-      
+
       if (error) {
         console.error('Error saving image URL:', error);
+      } else {
+        saved++;
       }
     }
+    return saved;
   };
 
   const onSubmit = async (data: ReviewFormData) => {
@@ -187,8 +191,10 @@ export const ReviewForm = ({ productId, onSuccess }: ReviewFormProps) => {
       // Upload images if review was created successfully and we have a reviewId
       if (result.reviewId && images.length > 0) {
         const uploadedUrls = await uploadImages(result.reviewId);
-        if (uploadedUrls.length > 0) {
-          await saveImageUrls(result.reviewId, uploadedUrls);
+        const saved = uploadedUrls.length > 0 ? await saveImageUrls(result.reviewId, uploadedUrls) : 0;
+        // La reseña ya se guardó; si fallan las fotos se avisa en vez de ocultarlo
+        if (saved < images.length) {
+          toast.warning("Tu reseña se guardó, pero no se pudieron guardar todas las fotos.");
         }
       }
 
