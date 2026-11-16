@@ -1,4 +1,4 @@
-project_id = "wkjwfuzdtghirxtyvoey"
+project_id = "bmqrykjmldaddyqyzykj"
 
 [functions.send-order-email]
 verify_jwt = false
@@ -7,4 +7,7 @@ verify_jwt = false
 verify_jwt = false
 
 [functions.submit-review]
+verify_jwt = false
+
+[functions.save-cod-customer]
 verify_jwt = false
