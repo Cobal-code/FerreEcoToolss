@@ -1,6 +1,6 @@
 # Publicación y rendimiento
 
-La tienda se publica desde **Lovable** (Share → Publish), que ya sirve el sitio por CDN con HTTPS y compresión. Lovable no permite configurar cabeceras propias, así que lo de abajo solo aplica si algún día se publica en otro alojamiento.
+La tienda se publica en https://ferreecotools.com. Lo siguiente describe cómo está optimizado el código y qué configurar según el alojamiento.
 
 ## Lo que ya está optimizado en el código
 - **Imágenes:** cada foto tiene variantes WebP de 400, 800 y 1200 px junto al original (`/images/productos/x.jpg` → `x-400.webp`, `x-800.webp`, `x-1200.webp`). Las tarjetas usan `srcset` y `sizes`, y las imágenes fuera de pantalla cargan de forma diferida. La versión de 1200 px solo se descarga al abrir el visor ampliado.
@@ -10,7 +10,7 @@ La tienda se publica desde **Lovable** (Share → Publish), que ya sirve el siti
 - **Código:** las páginas secundarias se cargan bajo demanda. React, el router y React Query van en paquetes propios (`vendor-*`) que se mantienen en caché entre publicaciones.
 - **Consultas:** las estadísticas de reseñas usan la caché de React Query (5 min) y en las tarjetas solo se piden cuando la tarjeta se acerca a la pantalla.
 
-## Si se publica fuera de Lovable (Netlify, Vercel, Cloudflare Pages…)
+## Al publicar (Netlify, Vercel, Cloudflare Pages…)
 1. Compilar con `npm run build` y publicar la carpeta `dist/`.
 2. Configurar la redirección SPA: todas las rutas deben servir `index.html`.
 3. Cabeceras de caché recomendadas:
