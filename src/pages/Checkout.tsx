@@ -379,7 +379,7 @@ const Checkout = () => {
                   render={({ field }) => (
                     <FormItem className="flex flex-col">
                       <FormLabel>Departamento</FormLabel>
-                      <Popover open={departmentOpen} onOpenChange={setDepartmentOpen}>
+                      <Popover modal open={departmentOpen} onOpenChange={setDepartmentOpen}>
                         <PopoverTrigger asChild>
                           <FormControl>
                             <Button
@@ -395,10 +395,10 @@ const Checkout = () => {
                             </Button>
                           </FormControl>
                         </PopoverTrigger>
-                        <PopoverContent className="w-full p-0 z-50" align="start">
+                        <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0 z-50" align="start" onWheel={(e) => e.stopPropagation()} onTouchMove={(e) => e.stopPropagation()}>
                           <Command>
                             <CommandInput placeholder="Buscar departamento..." />
-                            <CommandList>
+                            <CommandList className="max-h-[40vh] overscroll-contain [-webkit-overflow-scrolling:touch] [touch-action:pan-y]">
                               <CommandEmpty>No se encontró el departamento.</CommandEmpty>
                               <CommandGroup>
                                 {colombianDepartments.map((dept) => (
@@ -436,7 +436,7 @@ const Checkout = () => {
                   render={({ field }) => (
                     <FormItem className="flex flex-col">
                       <FormLabel>Ciudad</FormLabel>
-                      <Popover open={cityOpen} onOpenChange={setCityOpen}>
+                      <Popover modal open={cityOpen} onOpenChange={setCityOpen}>
                         <PopoverTrigger asChild>
                           <FormControl>
                             <Button
@@ -454,10 +454,10 @@ const Checkout = () => {
                             </Button>
                           </FormControl>
                         </PopoverTrigger>
-                        <PopoverContent className="w-full p-0 z-50" align="start">
+                        <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0 z-50" align="start" onWheel={(e) => e.stopPropagation()} onTouchMove={(e) => e.stopPropagation()}>
                           <Command>
                             <CommandInput placeholder="Buscar ciudad..." />
-                            <CommandList>
+                            <CommandList className="max-h-[40vh] overscroll-contain [-webkit-overflow-scrolling:touch] [touch-action:pan-y]">
                               <CommandEmpty>No se encontró la ciudad.</CommandEmpty>
                               <CommandGroup>
                                 {availableCities.map((city) => (
