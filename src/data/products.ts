@@ -31,10 +31,15 @@ import { Product } from "@/contexts/CartContext";
  * CATEGORÍAS VÁLIDAS:
  * - "Herramientas Manuales"
  * - "Herramientas Eléctricas"
- * - "Sujeción"
+ * - "Bombas e Hidrolavadoras"
+ * - "Sujeción"           (pinzas de presión, remachadoras, fijación)
  * - "Medición"
- * - "Seguridad"
- * 
+ * - "Seguridad"          (incluye caretas y gafas para soldar)
+ * - "Hogar"              (pequeños electrodomésticos)
+ *
+ * Al agregar o cambiar productos, actualiza también
+ * supabase/functions/_shared/products.ts (validación de precios del pedido).
+ *
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -265,7 +270,7 @@ Su diseño **ergonómico y liviano** facilita el trabajo continuo sin fatiga. Es
     originalPrice: 145000,
     isOnSale: true,
     shortDescription: "Bomba de agua de 1/2 HP con altura máxima de 20 metros. Aumenta la presión en sistemas de riego y distribución con impulsor de latón de alta resistencia.",
-    category: "Herramientas Eléctricas",
+    category: "Bombas e Hidrolavadoras",
     image: "/images/productos/pretulelect-11.jpg",
     images: [
       "/images/productos/pretulelect-11.jpg",
@@ -302,7 +307,7 @@ Disponible en **Villavicencio, Meta** con entrega directa en la puerta.
     originalPrice: 105000,
     isOnSale: true,
     shortDescription: "Careta de soldadura con filtro auto oscurecedor que se adapta automáticamente al arco. Compatible con soldadura MIG, TIG y MMA para máxima protección.",
-    category: "Herramientas Manuales",
+    category: "Seguridad",
     image: "/images/productos/careta-total-int-2.jpg",
     images: [
       "/images/productos/careta-total-int-2.jpg",
@@ -375,7 +380,7 @@ Disponible en **Villavicencio, Meta** con entrega directa en la puerta.
     name: "Electrobomba Truper 1/2HP - 40M Altura Maxima",
     price: 165000,
     shortDescription: "Electrobomba Truper de 1/2 HP con altura máxima de 40 m y flujo de 40 L/min. Potencia superior para riego agrícola y tanques elevados.",
-    category: "Herramientas Eléctricas",
+    category: "Bombas e Hidrolavadoras",
     image: "/images/productos/electro-truper12111-8.jpg",
     images: [
       "/images/productos/electro-truper12111-8.jpg",
@@ -980,7 +985,7 @@ El kit incluye **3 copas de impacto**, ideales para trabajos mecánicos de alto 
     name: "Hombre Solo de Presion 10\" Mordaza Recta Mango Vinil, Truper",
     price: 43000,
     shortDescription: "Pinza de presión de 10\" con mordaza recta y mango vinil antideslizante. Sujeción firme en piezas metálicas y de carpintería para trabajos de precisión.",
-    category: "Herramientas Manuales",
+    category: "Sujeción",
     image: "/images/productos/PPT-10RX.jpg",
     images: [
       "/images/productos/PPT-10RX.jpg",
@@ -988,6 +993,7 @@ El kit incluye **3 copas de impacto**, ideales para trabajos mecánicos de alto 
       "/images/productos/PPT-10RX+FC1.jpg",
       "/images/productos/PPT-10RX+FC2.jpg",
       "/images/productos/PPT-10RX+FC3.jpg",
+      "/images/productos/PPT-10RX+FC5.jpg",
     ],
     description: `El **hombre solo de presión TRUPER de 10"** es una herramienta indispensable para sujeción firme y segura. Su **mordaza recta** permite un agarre preciso en piezas planas o de bordes rectos, y el mango recubierto en vinil ofrece comodidad y control.
 
@@ -1225,7 +1231,7 @@ Esmeriladora angular **compacta y robusta**, ideal para herrería, construcción
     name: "Electrobomba Truper 1HP - 60M Altura Maxima, TRUPER",
     price: 280000,
     shortDescription: "Bomba periférica de 1 HP con altura máxima de 60 m y flujo de 45 L/min. Impulsor de latón para riego agrícola y llenado de tanques elevados.",
-    category: "Herramientas Eléctricas",
+    category: "Bombas e Hidrolavadoras",
     image: "/images/productos/BOAP-1A2.jpg",
     images: [
       "/images/productos/BOAP-1A2.jpg",
@@ -1501,13 +1507,475 @@ Esmeriladora angular **compacta y robusta**, ideal para herrería, construcción
 * Ligero y transpirable
 * Cumple normas **ANSI/ISEA 107**`,
     stock: 68
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // PRODUCTOS INCORPORADOS DESDE ferreimages/ (noviembre 2026)
+  // Precios provisionales: revisar antes de confirmar.
+  // ═══════════════════════════════════════════════════════════════════════════
+  {
+    id: 42,
+    name: "Licuadora Universal La Tradicional 1000W - Vaso de Vidrio 1.7 L",
+    price: 250000,
+    shortDescription: "Licuadora de 1000W con vaso de vidrio de 1,7 litros y 5 funciones: batir, puré, triturar, picar y pulso. Cuchilla desmontable para limpiar con facilidad.",
+    category: "Hogar",
+    image: "/images/productos/licuadora-universal-1000w-1.jpg",
+    images: [
+      "/images/productos/licuadora-universal-1000w-1.jpg",
+      "/images/productos/licuadora-universal-1000w-2.jpg",
+      "/images/productos/licuadora-universal-1000w-3.jpg",
+      "/images/productos/licuadora-universal-1000w-4.jpg",
+      "/images/productos/licuadora-universal-1000w-5.jpg",
+      "/images/productos/licuadora-universal-1000w-6.jpg",
+    ],
+    description: `## Licuadora UNIVERSAL La Tradicional
+Licuadora de **1000W** con vaso de vidrio, pensada para el uso diario en casa.
+
+### Especificaciones
+| Dato | Valor |
+| Marca | **UNIVERSAL** |
+| Línea | La Tradicional |
+| Potencia | **1000W** |
+| Vaso | Vidrio, **1,7 litros** |
+| Funciones | Off, Batir, Puré, Triturar, Picar y Pulso |
+| Cuchilla | Desmontable |
+| Garantía | 2 años (según empaque) |
+
+### Incluye
+* Base con motor
+* Vaso de vidrio con tapa
+* Conjunto de cuchilla desmontable
+
+> Producto nuevo en empaque original.`,
+    stock: 10
+  },
+  {
+    id: 43,
+    name: "Destornillador de Impacto con Puntas 3/8\", Truper Expert",
+    price: 75000,
+    shortDescription: "Destornillador de impacto reversible para aflojar tornillos oxidados o muy apretados. Incluye 4 puntas, adaptador de 3/8\" y estuche.",
+    category: "Herramientas Manuales",
+    image: "/images/productos/destornillador-impacto-truper-dimp-38x-1.jpg",
+    images: [
+      "/images/productos/destornillador-impacto-truper-dimp-38x-1.jpg",
+      "/images/productos/destornillador-impacto-truper-dimp-38x-2.jpg",
+      "/images/productos/destornillador-impacto-truper-dimp-38x-3.jpg",
+      "/images/productos/destornillador-impacto-truper-dimp-38x-4.jpg",
+    ],
+    description: `## TRUPER EXPERT DIMP-3/8X
+Destornillador de impacto para **aflojar tornillos oxidados o demasiado apretados** golpeándolo con un martillo. Es reversible: afloja y aprieta.
+
+### Especificaciones técnicas
+| Dato | Valor |
+| Código | 101176 (Clave DIMP-3/8X) |
+| Cuadro | **3/8"** |
+| Puntas | Acero S2 |
+| Cuerpo | Acero al carbono, reversible |
+| Largo | 16 cm |
+| Norma | Puntas superan ASME B107.600 |
+
+### Incluye
+* 1 destornillador de impacto
+* 4 puntas: cruz PH2 y PH3, planas de 8 y 10 mm
+* Adaptador para puntas
+* Estuche
+
+> Producto nuevo en empaque original.`,
+    stock: 10
+  },
+  {
+    id: 44,
+    name: "Pulidora Angular 4-1/2\" 1100W Industrial, TOTAL",
+    price: 245000,
+    shortDescription: "Pulidora industrial de 1100W y 12.000 rpm para disco de 4-1/2\". Caja de engranajes de aluminio, bloqueo de eje, mango auxiliar y guarda.",
+    category: "Herramientas Eléctricas",
+    image: "/images/productos/pulidora-total-1100w-utg110125563-1.jpg",
+    images: [
+      "/images/productos/pulidora-total-1100w-utg110125563-1.jpg",
+      "/images/productos/pulidora-total-1100w-utg110125563-2.jpg",
+      "/images/productos/pulidora-total-1100w-utg110125563-3.jpg",
+      "/images/productos/pulidora-total-1100w-utg110125563-4.jpg",
+    ],
+    description: `## TOTAL Industrial UTG110125563
+Pulidora angular de **1100W** de la línea industrial TOTAL, para corte y desbaste en metal y construcción.
+
+### Especificaciones técnicas
+| Dato | Valor |
+| Modelo | UTG110125563 |
+| Potencia | **1100W** |
+| Voltaje | 110-120V ~ 50/60Hz |
+| Velocidad sin carga | **12.000 rpm** |
+| Diámetro de disco | 4-1/2" |
+| Rosca del eje | 5/8"-11 UNC |
+| Caja de engranajes | Aluminio |
+| Bloqueo de eje | Sí |
+
+### Incluye
+* Pulidora
+* Mango auxiliar
+* Guarda
+* Llave
+
+> El disco se vende por separado. Producto nuevo en empaque original.`,
+    stock: 10
+  },
+  {
+    id: 45,
+    name: "Plomada de Latón 8 oz (225 g), Truper",
+    price: 45000,
+    shortDescription: "Plomada de latón sólido de 8 oz con tapa atornillable para centrar el hilo y punta de acero templado de repuesto. Para topografía, plomería y construcción.",
+    category: "Medición",
+    image: "/images/productos/plomada-laton-truper-plom-8-1.jpg",
+    images: [
+      "/images/productos/plomada-laton-truper-plom-8-1.jpg",
+      "/images/productos/plomada-laton-truper-plom-8-2.jpg",
+    ],
+    description: `## TRUPER PLOM-8
+Plomada de **latón** para verificar verticales en obra, plomería y topografía.
+
+### Especificaciones
+| Dato | Valor |
+| Código | 17070 (Clave PLOM-8) |
+| Material | Latón |
+| Peso | **8 oz (225 g)** |
+| Tapa | Atornillable, facilita centrar el hilo |
+| Punta | Acero templado, con repuesto incluido |
+
+### Características
+* Tapa atornillable para pasar y centrar el hilo
+* Incluye **punta de acero templado de repuesto**
+* Para topografía, plomería y construcción
+
+> Producto nuevo en empaque original.`,
+    stock: 10
+  },
+  {
+    id: 46,
+    name: "Alicate de Presión 10\" Quijada Recta, Stanley 84-371",
+    price: 55000,
+    shortDescription: "Alicate de presión de 10\" en acero cromo vanadio, con mordaza superior soldada con cobre y quijada recta para piezas planas y planchas de metal.",
+    category: "Sujeción",
+    image: "/images/productos/alicate-presion-stanley-84-371-1.jpg",
+    images: [
+      "/images/productos/alicate-presion-stanley-84-371-1.jpg",
+      "/images/productos/alicate-presion-stanley-84-371-2.jpg",
+      "/images/productos/alicate-presion-stanley-84-371-3.jpg",
+    ],
+    description: `## STANLEY 84-371
+Alicate de presión (hombre solo) de **10" (254 mm)** con quijada recta.
+
+### Especificaciones
+| Dato | Valor |
+| Referencia | 84-371 |
+| Largo | **10" (254 mm)** |
+| Quijada | Recta |
+| Material | Acero cromo vanadio |
+| Norma | Excede estándares ASME y Federal |
+
+### Características
+* Mordaza superior fija con **soldadura de cobre** para mayor fuerza de apriete
+* Quijadas rectas para sujetar firmemente **piezas planas y planchas de metal**
+* Tornillo de microajuste y palanca de fácil liberación
+
+> Producto nuevo en empaque original.`,
+    stock: 10
+  },
+  {
+    id: 47,
+    name: "Pinza de Presión 10\" Mordaza Curva, Truper",
+    price: 43000,
+    shortDescription: "Pinza de presión de 10\" con mordaza curva de acero al cromo molibdeno y apertura de 2\". Para tuberías, pernos, tornillos y tuercas.",
+    category: "Sujeción",
+    image: "/images/productos/pinza-presion-truper-ppt-10c-1.jpg",
+    images: [
+      "/images/productos/pinza-presion-truper-ppt-10c-1.jpg",
+      "/images/productos/pinza-presion-truper-ppt-10c-2.jpg",
+    ],
+    description: `## TRUPER PPT-10C
+Pinza de presión de **10"** con mordaza curva para máxima sujeción en superficies redondas.
+
+### Especificaciones
+| Dato | Valor |
+| Código | 17423 (Clave PPT-10C) |
+| Largo | **10" (25 cm)** |
+| Apertura máxima | **2" (50 mm)** |
+| Mordaza | Curva, acero al cromo molibdeno |
+| Acabado | Niquelado |
+
+### Características
+* Para **tuberías, pernos, tornillos y tuercas**
+* Tornillo de ajuste moleteado para mejor control
+* Palanca de liberación y entrada para llave Allen
+
+> Producto nuevo en empaque original.`,
+    stock: 10
+  },
+  {
+    id: 48,
+    name: "Hidrolavadora 1400W 1900 PSI (130 bar), TOTAL",
+    price: 380000,
+    shortDescription: "Hidrolavadora eléctrica de 1400W con presión máxima de 130 bar (1900 psi) y caudal de 5,5 L/min. Motor de cobre, bomba de metal y parada automática.",
+    category: "Bombas e Hidrolavadoras",
+    image: "/images/productos/hidrolavadora-total-1400w-1.jpg",
+    images: [
+      "/images/productos/hidrolavadora-total-1400w-1.jpg",
+      "/images/productos/hidrolavadora-total-1400w-2.jpg",
+      "/images/productos/hidrolavadora-total-1400w-3.jpg",
+      "/images/productos/hidrolavadora-total-1400w-4.jpg",
+    ],
+    description: `## Hidrolavadora TOTAL 1400W
+Hidrolavadora eléctrica para lavar vehículos, pisos, fachadas y equipos.
+
+### Especificaciones técnicas
+| Dato | Valor |
+| Potencia | **1400W** |
+| Voltaje | 110-120V ~ 60Hz |
+| Presión máxima | **130 bar (1900 psi)** |
+| Caudal | **5,5 L/min** |
+| Velocidad del motor | 16.800/min |
+| Sistema | Parada automática (auto stop) |
+
+### Características
+* Motor con bobinado de **cobre**
+* Bomba de metal de alta calidad
+* Pistola de presión TOTAL
+* Incluye manguera, lanza y accesorios
+
+> Producto nuevo en empaque original.`,
+    stock: 10
+  },
+  {
+    id: 49,
+    name: "Martillo Demoledor 1300W 20J Hexagonal + Maletín, TOTAL",
+    price: 480000,
+    shortDescription: "Demoledor industrial de 1300W con 20 J de energía de impacto y 3800 golpes/min. Encastre hexagonal, sistema antivibración, maletín y 2 cinceles.",
+    category: "Herramientas Eléctricas",
+    image: "/images/productos/demoledor-total-uth2130016-1.jpg",
+    images: [
+      "/images/productos/demoledor-total-uth2130016-1.jpg",
+      "/images/productos/demoledor-total-uth2130016-2.jpg",
+      "/images/productos/demoledor-total-uth2130016-3.jpg",
+      "/images/productos/demoledor-total-uth2130016-4.jpg",
+      "/images/productos/demoledor-total-uth2130016-5.jpg",
+    ],
+    description: `## TOTAL Industrial UTH2130016
+Martillo demoledor para **cincelar concreto, ladrillo, piedra y asfalto**.
+
+### Especificaciones técnicas
+| Dato | Valor |
+| Modelo | UTH2130016 |
+| Potencia | **1300W** |
+| Voltaje | 110-120V ~ 50/60Hz |
+| Energía de impacto | **20 J** |
+| Golpes por minuto | 3800/min |
+| Encastre | Hexagonal (17 mm) |
+| Peso aproximado | 7 kg |
+| Sistema | Antivibración |
+
+### Incluye
+* Maletín BMC
+* Cincel de punta y cincel plano
+* Llave y grasa
+
+> Producto nuevo en empaque original.`,
+    stock: 10
+  },
+  {
+    id: 50,
+    name: "Rotomartillo SDS Plus 1050W 3 Funciones + Maletín, TOTAL",
+    price: 450000,
+    shortDescription: "Rotomartillo industrial de 1050W con 3 funciones. Perfora hasta 26 mm en concreto, 13 mm en acero y 40 mm en madera. Incluye maletín, brocas y cincel.",
+    category: "Herramientas Eléctricas",
+    image: "/images/productos/rotomartillo-total-uth110266-1.jpg",
+    images: [
+      "/images/productos/rotomartillo-total-uth110266-1.jpg",
+      "/images/productos/rotomartillo-total-uth110266-2.jpg",
+      "/images/productos/rotomartillo-total-uth110266-3.jpg",
+      "/images/productos/rotomartillo-total-uth110266-4.jpg",
+    ],
+    description: `## TOTAL UTH110266
+Rotomartillo de **3 funciones** para perforar y cincelar en concreto, ladrillo y mampostería.
+
+### Especificaciones técnicas
+| Dato | Valor |
+| Modelo | UTH110266 |
+| Potencia | **1050W** |
+| Voltaje | 110-120V ~ 50/60Hz |
+| Velocidad sin carga | 1100 rpm |
+| Golpes por minuto | 3900/min |
+| Perforación en concreto | **26 mm (1")** |
+| Perforación en acero | 13 mm (1/2") |
+| Perforación en madera | 40 mm (1-1/2") |
+| Encastre | SDS Plus |
+
+### Incluye
+* Maletín
+* Mango auxiliar
+* Brocas y cincel SDS Plus
+* Copa recolectora de polvo, llave y grasa
+
+> Producto nuevo en empaque original.`,
+    stock: 10
+  },
+  {
+    id: 51,
+    name: "Juego de Copas 1/2\" y 3/8\" x24 Piezas + Rache, Germany",
+    price: 75000,
+    shortDescription: "Juego de 24 piezas en acero cromo vanadio con rache, copas y puntas de cuadro 1/2\" y 3/8\". Organizador con asa para llevarlo a cualquier trabajo.",
+    category: "Herramientas Manuales",
+    image: "/images/productos/juego-copas-germany-24pcs-1.jpg",
+    images: [
+      "/images/productos/juego-copas-germany-24pcs-1.jpg",
+      "/images/productos/juego-copas-germany-24pcs-2.jpg",
+      "/images/productos/juego-copas-germany-24pcs-3.jpg",
+    ],
+    description: `## Juego de copas GERMANY 24 piezas
+Juego de copas con rache para mecánica y mantenimiento.
+
+### Especificaciones
+| Dato | Valor |
+| Piezas | **24** |
+| Cuadro | 1/2" y 3/8" |
+| Material | Acero cromo vanadio (Cr-V 6150) |
+| Norma | DIN 3124 |
+| Acabado | Cromado contra la oxidación |
+
+### Incluye
+* Rache
+* Copas
+* Puntas con copa
+* Organizador con asa
+
+> Producto nuevo en empaque original.`,
+    stock: 10
+  },
+  {
+    id: 52,
+    name: "Cautín Tipo Lápiz 100W Trabajo Pesado, Truper",
+    price: 45000,
+    shortDescription: "Cautín de 100W para trabajo pesado, con temperatura máxima de 500 °C, punta de cobre niquelada y 3 puntas incluidas.",
+    category: "Herramientas Eléctricas",
+    image: "/images/productos/cautin-truper-cau-100-1.jpg",
+    images: [
+      "/images/productos/cautin-truper-cau-100-1.jpg",
+      "/images/productos/cautin-truper-cau-100-2.jpg",
+    ],
+    description: `## TRUPER CAU-100
+Cautín tipo lápiz de **100W** para soldadura con estaño en trabajos pesados.
+
+### Especificaciones técnicas
+| Dato | Valor |
+| Código | 14623 (Clave CAU-100) |
+| Potencia | **100W** |
+| Voltaje | 120V ~ 60Hz |
+| Temperatura máxima | **500 °C** |
+| Punta | Cobre con recubrimiento de níquel |
+| Mango | Nylon |
+
+### Incluye
+* Cautín
+* 3 puntas: cónica, cónica fina y en "V"
+* Soporte
+
+> Producto nuevo en empaque original.`,
+    stock: 10
+  },
+  {
+    id: 53,
+    name: "Esmeriladora Angular 4-1/2\" 1250W, TRUPER Industrial",
+    price: 320000,
+    shortDescription: "Esmeriladora industrial de 1250W y 11.000 rpm con motor sobre balero de bolas. Incluye disco abrasivo, guarda, mango auxiliar y llave.",
+    category: "Herramientas Eléctricas",
+    image: "/images/productos/esmeriladora-truper-esma-4512n-1.jpg",
+    images: [
+      "/images/productos/esmeriladora-truper-esma-4512n-1.jpg",
+      "/images/productos/esmeriladora-truper-esma-4512n-2.jpg",
+      "/images/productos/esmeriladora-truper-esma-4512n-3.jpg",
+    ],
+    description: `## TRUPER Industrial ESMA-4512N
+Esmeriladora angular de **1250W** para corte y desbaste en uso industrial.
+
+### Especificaciones técnicas
+| Dato | Valor |
+| Código | 12873 (Clave ESMA-4512N) |
+| Potencia | **1250W** |
+| Voltaje / Frecuencia | 127V / 60Hz |
+| Corriente | 9,5 A |
+| Velocidad | **11.000 rpm** |
+| Diámetro de disco | 4-1/2" (115 mm) |
+| Eje | 5/8"-11 UNC |
+| Motor | Montado sobre balero de bolas |
+| Carbones | Expuestos, de cambio fácil |
+| Garantía | 5 años (según empaque) |
+
+### Incluye
+* Esmeriladora
+* Disco abrasivo
+* Guarda, mango auxiliar y llave
+
+> Producto nuevo en empaque original.`,
+    stock: 10
+  },
+  {
+    id: 54,
+    name: "Tijera de Aviación 10\" Corte Recto Industrial, TOTAL",
+    price: 38000,
+    shortDescription: "Tijera de aviación de 250 mm con corte recto para lámina. Corta acero al carbono de hasta 1,2 mm y acero inoxidable de hasta 0,7 mm.",
+    category: "Herramientas Manuales",
+    image: "/images/productos/tijera-aviacion-total-tht522106-1.jpg",
+    images: [
+      "/images/productos/tijera-aviacion-total-tht522106-1.jpg",
+      "/images/productos/tijera-aviacion-total-tht522106-2.jpg",
+    ],
+    description: `## TOTAL Industrial THT522106
+Tijera de aviación para **cortar lámina** en línea recta.
+
+### Especificaciones
+| Dato | Valor |
+| Modelo | THT522106 |
+| Largo | **10" (250 mm)** |
+| Tipo de corte | Recto |
+| Acero al carbono | Hasta **1,2 mm** |
+| Acero inoxidable | Hasta **0,7 mm** |
+
+### Características
+* Mango bicolor antideslizante
+* Seguro de cierre
+
+> Producto nuevo en empaque original.`,
+    stock: 10
+  },
+  {
+    id: 55,
+    name: "Remachadora Manual 10.5\", TOTAL",
+    price: 45000,
+    shortDescription: "Remachadora pop manual de 10,5\" para remaches de 2,4, 3,2, 4,0 y 4,8 mm. Tabla de espesores de remachado impresa en el empaque.",
+    category: "Sujeción",
+    image: "/images/productos/remachadora-total-tht32108s-1.jpg",
+    images: [
+      "/images/productos/remachadora-total-tht32108s-1.jpg",
+      "/images/productos/remachadora-total-tht32108s-2.jpg",
+    ],
+    description: `## TOTAL THT32108S
+Remachadora manual para **remaches pop** en lámina, aluminio y carpintería metálica.
+
+### Especificaciones
+| Dato | Valor |
+| Modelo | THT32108S |
+| Largo | **10,5"** |
+| Remaches compatibles | 2,4 mm, 3,2 mm, 4,0 mm y 4,8 mm |
+
+> Producto nuevo en empaque original.`,
+    stock: 10
   }
 ];
 
 export const categories = [
   "Herramientas Manuales",
   "Herramientas Eléctricas",
+  "Bombas e Hidrolavadoras",
   "Sujeción",
   "Medición",
-  "Seguridad"
+  "Seguridad",
+  "Hogar"
 ];

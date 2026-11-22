@@ -40,6 +40,18 @@ const getShortTagline = (product: Product): string => {
       "Calidad profesional",
       "Resultados precisos",
     ],
+    "Bombas e Hidrolavadoras": [
+      "Potencia profesional",
+      "Rendimiento superior",
+      "Calidad garantizada",
+      "Máxima eficiencia",
+    ],
+    "Hogar": [
+      "Para tu cocina",
+      "Uso diario",
+      "Calidad garantizada",
+      "Práctica y confiable",
+    ],
     "Seguridad": [
       "Protección total",
       "Seguridad garantizada",

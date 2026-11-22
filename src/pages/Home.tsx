@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Shield, Truck, CreditCard, Clock, Star, Zap, Wrench, Hammer, Ruler, HardHat, Link2, type LucideIcon } from "lucide-react";
+import { ArrowRight, Shield, Truck, CreditCard, Clock, Star, Zap, Wrench, Hammer, Ruler, HardHat, Link2, Droplets, CookingPot, type LucideIcon } from "lucide-react";
 import { BestSellers } from "@/components/BestSellers";
 import { FeaturedProducts } from "@/components/FeaturedProducts";
 import { products, categories } from "@/data/products";
@@ -15,6 +15,8 @@ const categoryIcons: Record<string, LucideIcon> = {
   "Sujeción": Link2,
   "Medición": Ruler,
   "Seguridad": HardHat,
+  "Bombas e Hidrolavadoras": Droplets,
+  "Hogar": CookingPot,
 };
 
 const Home = () => {
