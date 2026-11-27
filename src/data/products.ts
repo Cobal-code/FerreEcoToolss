@@ -1274,9 +1274,9 @@ Esmeriladora angular **compacta y robusta**, ideal para herrería, construcción
     price: 42000,
     shortDescription: "Transportador electrónico con rango completo de 0-360° y resolución de 0.05°. Pantalla LCD digital con función de retención de lectura y cero en cualquier posición.",
     category: "Medición",
-    image: "/images/productos/pintar-5.jpg",
+    image: "/images/productos/sin-foto.svg",
     images: [
-      "/images/productos/pintar-5.jpg"
+      "/images/productos/sin-foto.svg"
     ],
     description: `Transportador electrónico de **precisión** con rango completo de **0-360°**, pensado para carpintería, herrería e instalaciones donde el ángulo exacto marca la diferencia.
 
@@ -1305,9 +1305,9 @@ Esmeriladora angular **compacta y robusta**, ideal para herrería, construcción
     price: 18500,
     shortDescription: "Casco industrial tipo II con arnés de 4 puntos, sistema de ventilación y ranuras para accesorios. Protección lateral certificada ANSI/ISEA Z89.1.",
     category: "Seguridad",
-    image: "/images/productos/puli-1.jpg",
+    image: "/images/productos/sin-foto.svg",
     images: [
-      "/images/productos/puli-1.jpg"
+      "/images/productos/sin-foto.svg"
     ],
     description: `Casco industrial con **arnés ajustable** y sistema de ventilación certificado, diseñado para obras y entornos con riesgo de impacto lateral.
 
@@ -1332,9 +1332,9 @@ Esmeriladora angular **compacta y robusta**, ideal para herrería, construcción
     price: 5600,
     shortDescription: "Gafas de policarbonato con protección UV 99.9%, recubrimiento antirayas y antivaho. Diseño envolvente con patillas ajustables, ligeras y cómodas.",
     category: "Seguridad",
-    image: "/images/productos/pulitru-1.jpg",
+    image: "/images/productos/sin-foto.svg",
     images: [
-      "/images/productos/pulitru-1.jpg"
+      "/images/productos/sin-foto.svg"
     ],
     description: `Gafas de seguridad en **policarbonato** con protección UV y doble recubrimiento **antirayas y antivaho**, para visión clara en todo momento.
 
@@ -1357,9 +1357,9 @@ Esmeriladora angular **compacta y robusta**, ideal para herrería, construcción
     price: 8900,
     shortDescription: "Guantes de carnaza con refuerzos en palma y dedos, puño largo y costuras reforzadas. Resistentes al calor, ideales para soldadura y construcción.",
     category: "Seguridad",
-    image: "/images/productos/pulitru-2.jpg",
+    image: "/images/productos/sin-foto.svg",
     images: [
-      "/images/productos/pulitru-2.jpg"
+      "/images/productos/sin-foto.svg"
     ],
     description: `Guantes de **carnaza** con refuerzos en palma y dedos, pensados para trabajo pesado, soldadura y construcción.
 
@@ -1384,9 +1384,9 @@ Esmeriladora angular **compacta y robusta**, ideal para herrería, construcción
     isOnSale: true,
     shortDescription: "Botas industriales con puntera de acero (200 J), suela antideslizante dieléctrica hasta 18kV y cuero hidrofugado. Resistentes a aceites y químicos.",
     category: "Seguridad",
-    image: "/images/productos/pulitru-3.jpg",
+    image: "/images/productos/sin-foto.svg",
     images: [
-      "/images/productos/pulitru-3.jpg"
+      "/images/productos/sin-foto.svg"
     ],
     description: `Botas industriales con **puntera de acero** y suela antideslizante dieléctrica, para entornos húmedos, eléctricos y de alto tránsito.
 
@@ -1411,9 +1411,9 @@ Esmeriladora angular **compacta y robusta**, ideal para herrería, construcción
     price: 12500,
     shortDescription: "Pack de 10 mascarillas N95 con filtración del 95%, válvula de exhalación y ajuste facial sellado. Clip nasal moldeable y bandas elásticas ajustables.",
     category: "Seguridad",
-    image: "/images/productos/pulitru-4.jpg",
+    image: "/images/productos/sin-foto.svg",
     images: [
-      "/images/productos/pulitru-4.jpg"
+      "/images/productos/sin-foto.svg"
     ],
     description: `Pack de mascarillas **N95** con filtro de alta eficiencia y **válvula de exhalación**, para ambientes con polvo, partículas y trabajos de lijado.
 
@@ -1438,9 +1438,9 @@ Esmeriladora angular **compacta y robusta**, ideal para herrería, construcción
     isOnSale: true,
     shortDescription: "Arnés integral con anillos D dorsales y pectorales, capacidad de 140 kg. Hebillas de conexión rápida y correas acolchadas para trabajo en altura seguro.",
     category: "Seguridad",
-    image: "/images/productos/bosh-3.jpg",
+    image: "/images/productos/sin-foto.svg",
     images: [
-      "/images/productos/bosh-3.jpg"
+      "/images/productos/sin-foto.svg"
     ],
     description: `Arnés integral para **trabajo en altura** con anillos D dorsales y pectorales, ajustable en piernas y torso para un calce seguro.
 
@@ -1464,9 +1464,9 @@ Esmeriladora angular **compacta y robusta**, ideal para herrería, construcción
     price: 14500,
     shortDescription: "Orejeras con reducción de ruido NRR 27dB, almohadillas acolchadas reemplazables y diadema ajustable. Plegables para fácil transporte y almacenamiento.",
     category: "Seguridad",
-    image: "/images/productos/bosh-4.jpg",
+    image: "/images/productos/sin-foto.svg",
     images: [
-      "/images/productos/bosh-4.jpg"
+      "/images/productos/sin-foto.svg"
     ],
     description: `Orejeras de **reducción de ruido hasta 27 dB** con almohadillas acolchadas, ideales para uso con pulidoras, taladros y maquinaria.
 
@@ -1488,9 +1488,9 @@ Esmeriladora angular **compacta y robusta**, ideal para herrería, construcción
     price: 6800,
     shortDescription: "Chaleco clase 2 en malla de poliéster amarillo fluorescente con cintas reflectivas de 50 mm. Ligero, transpirable y con cierre de velcro frontal.",
     category: "Seguridad",
-    image: "/images/productos/pist1.jpg",
+    image: "/images/productos/sin-foto.svg",
     images: [
-      "/images/productos/pist1.jpg"
+      "/images/productos/sin-foto.svg"
     ],
     description: `Chaleco de **alta visibilidad clase 2** con cintas reflectivas, indicado para trabajo en vías, obras y maniobras nocturnas.
 

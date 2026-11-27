@@ -48,3 +48,6 @@ supabase/.branches
 # Alojamientos (configuración local)
 .vercel
 .netlify
+
+# Vista previa del script de fondo blanco
+scripts/salida-fondo-blanco/

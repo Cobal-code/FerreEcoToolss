@@ -125,7 +125,8 @@ export const HeroWrench = ({ children }: HeroWrenchProps) => {
 
   // Productos con miniatura en el sprite, mezclados una vez por carga (como antes)
   const pool = useMemo(
-    () => shuffle(products.filter((p) => HERO_SPRITE.index[p.id] !== undefined && p.image?.startsWith("/"))),
+    // Solo productos con foto real (no la imagen genérica "sin foto")
+    () => shuffle(products.filter((p) => HERO_SPRITE.index[p.id] !== undefined && p.image?.startsWith("/") && !p.image.endsWith(".svg"))),
     [],
   );
 

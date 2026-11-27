@@ -11,6 +11,7 @@ import { useProductReviews } from "@/hooks/useProductReviews";
 import { StarRating } from "@/components/reviews/StarRating";
 import { getSaleTimeRemaining } from "@/utils/saleEndDate";
 import { SmartImage } from "@/components/SmartImage";
+import { getCardSummary } from "@/lib/plainText";
 
 interface ProductCardProps {
   product: Product;
@@ -96,7 +97,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
           </h3>
         </Link>
         <p className="text-xs sm:text-sm text-muted-foreground line-clamp-2 mt-1 mb-3">
-          {product.description}
+          {getCardSummary(product)}
         </p>
         <div className="space-y-2.5 mt-auto">
           {/* Compact countdown timer for sale products */}
